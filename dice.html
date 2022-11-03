@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <style></style>
+        <script>
+            function initialize()
+            {
+                roll1Output = document.getElementById("roll1output");
+                roll2Output = document.getElementById("roll2output");
+                totalOutput = document.getElementById("totaloutput");
+                roll1 = 0;
+                roll2 = 0; 
+                total = 0;
+            }
+
+            function roll()
+            {
+                roll1 = Math.round((Math.random() * 5) + 1);
+                roll2 = Math.round((Math.random() * 5) + 1);
+                total = roll1 + roll2;
+                display();
+            }
+
+            function display()
+            {
+                roll1Output.innerHTML = roll1;
+                roll2Output.innerHTML = roll2;
+                totalOutput.innerHTML = total;
+            }
+        </script>
+    </head>
+ <body onload = "initialize();"> 
+        <h1 id = "roll1output">
+            You have not clicked the button.
+        </h1>
+        <h1 id = "roll2output">
+        
+        </h1>
+        <h1 id = "totaloutput">
+          
+        </h1>
+        <hr />
+
+        <button onclick = "roll();">Roll a dice!</button>
+    </body>
+</html>
+
+<!-- Jinwen Wu Web Dev PD 7/8
+I first started out by making a function that initalized all of my variables so that I can store my rolls and toal.
+From there, I simply just made a roll function using math.random() and I rounded down using math.round() to make sure the rolls were integers.
+Next, I added them together to get the total.
+In my body, I just made a button to execute the roll() function and then I had ids in <h1> in order to display each roll and the total on the page.
+--> 
